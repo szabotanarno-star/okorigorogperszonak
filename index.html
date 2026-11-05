@@ -1,0 +1,279 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hellász 35 arca</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<style>
+/* Layout: diáknézet = egy kiosztott kártya középen; tanárnézet = teljes pakli rácsban, kiosztási állapottal */
+:root{
+  --bg:#eceef0; --paper:#fbfbfa; --ink:#1d2433; --muted:#5b6475; --rule:#d3d7de;
+  --accent:#a8761f; --on-accent:#ffffff;
+  --s-pol:#24477a; --s-csal:#2f7d78; --s-szab:#6f7a2c; --s-hel:#9a4a24; --s-rab:#4a4f5c;
+  --f-disp:"Cormorant Garamond", "Georgia", serif;
+  --f-body:"Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141820; --paper:#1d222c; --ink:#e7e9ee; --muted:#9aa3b3; --rule:#323a48;
+  --accent:#d6a24a; --on-accent:#1a1406;
+  --s-pol:#7ea3dd; --s-csal:#5fc0b9; --s-szab:#b3c05e; --s-hel:#e08a5f; --s-rab:#a9afbd;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141820; --paper:#1d222c; --ink:#e7e9ee; --muted:#9aa3b3; --rule:#323a48;
+  --accent:#d6a24a; --on-accent:#1a1406;
+  --s-pol:#7ea3dd; --s-csal:#5fc0b9; --s-szab:#b3c05e; --s-hel:#e08a5f; --s-rab:#a9afbd;
+  color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+header{margin-bottom:22px}
+header .eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+header h1{font-family:var(--f-disp);font-weight:700;font-size:clamp(2rem,5vw,3.2rem);line-height:1;margin:0;text-wrap:balance}
+header p{max-width:66ch;color:var(--muted);margin:10px 0 0}
+
+.solo{max-width:520px;margin:0 auto}
+.solo header{text-align:left}
+.status{font-size:.92rem;color:var(--muted);margin:0 0 14px}
+.note{border:1px solid var(--rule);background:var(--paper);border-radius:4px;padding:12px 14px;font-size:.9rem;color:var(--muted);margin:0 0 16px}
+.note strong{color:var(--ink)}
+
+.ask{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin:4px 0 18px}
+.ask label{display:flex;flex-direction:column;gap:4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ask input{font:inherit;font-size:1.1rem;width:7ch;padding:6px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink);font-variant-numeric:tabular-nums}
+.btn{font:inherit;font-weight:700;font-size:.9rem;border:0;border-radius:6px;padding:8px 16px;background:var(--accent);color:var(--on-accent);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
+.btn.danger{background:var(--s-hel);color:var(--paper)}
+.btn:focus-visible,input:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.err{color:var(--s-hel);font-size:.86rem;width:100%}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:4px;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.solo .card{animation:deal .5s ease-out both}
+@keyframes deal{from{transform:translateY(10px) rotate(-1deg)}to{transform:none}}
+.band{height:6px;background:var(--c)}
+.top{display:flex;justify-content:space-between;gap:8px;padding:12px 16px 0;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.top .st{color:var(--c);font-weight:700}
+.name{padding:2px 16px 0}
+.name h2{font-family:var(--f-disp);font-weight:700;font-size:1.75rem;line-height:1.05;margin:0}
+.solo .name h2{font-size:2.4rem}
+.name .mean{font-family:var(--f-disp);font-style:italic;font-size:1rem;color:var(--muted)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:12px 16px 0;padding:10px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.88rem}
+.facts dt{color:var(--muted);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+.facts dd{margin:0;min-width:0}
+.obols{display:inline-flex;gap:3px;vertical-align:-1px;margin-right:6px}
+.obols i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--accent)}
+.obols i.f{background:var(--accent)}
+.body{padding:10px 16px 14px;display:flex;flex-direction:column;gap:8px;font-size:.9rem}
+.solo .body{font-size:.98rem}
+.body p{margin:0}
+.body b{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:1px}
+.foot{margin-top:auto;padding:0 16px 12px;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tag{font-weight:700;letter-spacing:.04em}
+.tag.taken{color:var(--accent)}
+
+.teacherbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:12px 0;margin-bottom:16px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.stat{font-family:var(--f-disp);font-size:1.6rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.stat small{font-family:var(--f-body);font-size:.8rem;font-weight:400;color:var(--muted);margin-left:6px}
+.teacherbar .spacer{flex:1}
+.confirm{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem}
+details.map{margin:0 0 18px;font-size:.88rem}
+details.map summary{cursor:pointer;color:var(--muted)}
+.maptab{overflow-x:auto;margin-top:8px}
+.maptab table{border-collapse:collapse;font-variant-numeric:tabular-nums}
+.maptab td,.maptab th{padding:3px 12px 3px 0;text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap}
+.maptab th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.maptab .cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 24px}
+
+@media (prefers-reduced-motion:reduce){.solo .card{animation:none}}
+@media print{body{background:#fff;color:#000}.teacherbar,details.map,.ask,.note,.status{display:none}.grid{grid-template-columns:repeat(3,1fr);gap:8px}.card{break-inside:avoid}}
+</style>
+
+<div class="wrap" id="app">
+  <div class="solo">
+    <header>
+      <div class="eyebrow">Szerepkártya · Kr. e. 431 tavasza</div>
+      <h1>Hellász 35 arca</h1>
+    </header>
+    <p class="status" id="boot">Kártyád kiosztása folyamatban…</p>
+  </div>
+</div>
+
+<script>
+const STATUS={
+  pol:{label:"Polgár",c:"--s-pol"},
+  csal:{label:"Polgárcsalád tagja",c:"--s-csal"},
+  szab:{label:"Szabad nem polgár",c:"--s-szab"},
+  hel:{label:"Helóta",c:"--s-hel"},
+  rab:{label:"Rabszolga",c:"--s-rab"}
+};
+const D=[
+["Kallisztratosz","„a legszebb sereg”","férfi",52,"Athén","pol","pentakosziomedimnosz (legfelső vagyonosztály)","földbirtokos, triérarkhosz",5,"kb. 15 talentum: olajfaligetek Attikában, laureioni bányabérlet, 40 rabszolga","Évente saját költségén szerel fel egy hadihajót (triérarkhia, kb. 1 talentum). A népgyűlésen arisztokratikus modora miatt sokan gyanakodnak rá.","Szavaz, minden tisztségre választható, sztratégosz is lehet.","Ha Spárta betör Attikába, a birtokait felégetik; a falak mögé kell költöztetnie a háztartását."],
+["Arkhesztraté","„a sereg vezetője”","nő",34,"Athén","csal","athéni polgár felesége","háztartásvezető (oikosz úrnője)",4,"3000 drachma hozomány, de azt a férje (kíriosza) kezeli","Irányítja a rabszolganőket, a szövést, a raktárt és a gyerekek nevelését. Nyilvánosan főleg vallási ünnepeken jelenik meg.","Polgár anyaként fia polgárjogának feltétele; papnői tisztséget viselhet, vagyonnal önállóan nem rendelkezik.","Ha a férje meghal a háborúban, hozománya visszaszáll az apai családra, ő pedig új kíriosz alá kerül."],
+["Lükón","„farkaskölyök”","férfi",41,"Athén","pol","thész (legalsó vagyonosztály)","evezős a flottában, a Pireuszban rakodó",1,"föld nincs; napi 3 obolosz–1 drachma, szolgálat idején zsold","A flotta motorja: evezőpadon ül, és ő tölti meg a népgyűlést. Periklész politikájának hűséges híve.","Szavaz, esküdtbíró lehet (napi 2 obolosz), sorsolással tisztséget kaphat.","Ha a hajó nem fut ki, nincs keresete; a zsúfolt városban fél a járványtól."],
+["Manész","phrüg rabszolganév","férfi",28,"Athén (Laureion)","rab","bányarabszolga","ezüstbányász",0,"semmi; egy bérlő tulajdona, aki napi 1 oboloszért bérbe adja","Szűk tárnákban, mécses fényénél vájja az ércet. Társai között frígek, thrákok, paphlagónok vannak; görögül alig beszél.","Jogi személy nincs; megölése tiltott, de bántalmazása gyakorlatilag büntetlen.","A tárnák beomlása és a por. Ha az ellenség közel ér, talán megszökhet."],
+["Thraitta","„thrák nő”","nő",19,"Athén","rab","házi rabszolganő","dajka",0,"semmi; vételára kb. 180 drachma volt","Kalózok rabolták el gyerekként egy thrák faluból. Most egy polgárcsalád kisfiát szoptatja és dajkálja; a gyerek őt szereti legjobban.","Nincs; tanúvallomását a bíróság csak kínvallatás alatt fogadja el.","Hogy a gyerek elválasztása után eladják."],
+["Ksenarkhosz","„az idegenek vezére”","férfi",47,"Athén (Pireusz)","szab","metoikosz Milétoszból","pajzskészítő műhely tulajdonosa",4,"kb. 6 talentum; műhely 30 rabszolgával, saját ház nincs (földet nem birtokolhat)","Harminc éve él Athénban, a háborús megrendelések gazdaggá teszik. Szókratész barátai néha nála vacsoráznak.","Nem szavaz, földet nem vehet; évi 12 drachma metoikion-adót fizet, hoplitaként szolgál, kell egy athéni pártfogó (prosztatész).","Hogy egy irigy szükophantész feljelentse; polgárjogot sosem kaphat."],
+["Glükera","„édes”","nő",26,"Athén","szab","metoikosz Korinthoszból","hetaira (művelt társalgónő)",3,"ékszerek, saját bérelt ház, két szolgálólány","Lakomákon zenél, vitázik, verset idéz; több tudást szerzett, mint a legtöbb polgárfeleség. Megélhetése férfi pártfogókon múlik.","Évi 6 drachma metoikion-adót fizet; házasságra polgárral nem léphet, gyerekei nem lehetnek polgárok.","Hogy idősebb korára elfogynak a pártfogók."],
+["Phaidimosz","„ragyogó”","férfi",38,"Athén (Kerameikosz)","pol","zeugitész (hoplita vagyonosztály)","fazekasmester, vörösalakos vázák",2,"műhely, égetőkemence, két rabszolga segéd, kis földdarab","A Kerameikosz negyedben dolgozik, vázáit Etruriáig szállítják. Szívesen fest jeleneteket a hétköznapi életből.","Szavaz, hoplitaként szolgál, saját fegyverzetét maga veszi.","A korinthoszi piacok elvesztése és az, hogy hadba kell vonulnia."],
+["Démokharész","„a nép öröme”","férfi",18,"Athén","pol","frissen bejegyzett polgár","határőr (peripolosz) szolgálatban",3,"apja közepes birtokának várományosa","Most vették fel démosza listájára; két évig Attika erődeiben őrködik. Szofisták előadásaira jár, és vitatkozik az apjával.","Szavazhat a népgyűlésen; tisztséget csak 30 évesen viselhet.","Bizonyítani akar az első csatában."],
+["Kleioboulé","„a híres tanácsú”","nő",63,"Athén","csal","előkelő nemzetség (Eteobutadák) leánya","Athéné Poliasz papnője",4,"családi birtok, papi járandóságok az áldozatokból","Az Akropolisz legfontosabb kultuszát vezeti, a Panathénaia-ünnep egyik főszereplője. Tekintélye a politikusoknál is nagy.","Politikai joga nincs, de vallási tekintélye révén a polisz egyik legbefolyásosabb nője.","Hogy az isteni jelek rosszat sejtetnek a háborúhoz."],
+["Phanosztraté","„a fényes sereg”","nő",55,"Athén","csal","polgárnő, özvegy","bába és gyógyfüves asszony",1,"kis ház, a szülések után kapott ajándékok","Szinte minden szomszédos ház gyerekét ő segítette világra. Fiával él, akinek szűkös a keresete.","Politikai joga nincs; özvegyként fia a kíriosza.","Az ostrom alatt összezsúfolódott városban egyre több beteg."],
+["Ariapeithész","szkíta név","férfi",30,"Athén","rab","közrabszolga (démosziosz)","szkíta íjász, rendfenntartó",0,"saját vagyona nincs; a polisz ellátja","A népgyűlésen ő tereli a polgárokat, a piacon rendet tart. Görögjén nevetnek a komédiákban.","Rabszolga, de a polisz tulajdona; nagyobb önállósága van, mint a házi rabszolgáknak.","Hogy a polgárok megvetik, miközben neki kell fegyelmeznie őket."],
+["Mürrhiné","„mirtusz”","nő",44,"Athén","csal","szegény polgárnő","kenyérárus az agorán",1,"egy kemence és a napi bevétel, néhány obolosz","Hajnalban süt, napközben az agorán árul és vitatkozik a vevőkkel. A szegény polgárnőknek nincs módjuk otthon maradni.","Politikai joga nincs; árusként a piacfelügyelők alá tartozik.","Ha a gabonahajók nem érkeznek, drága a liszt."],
+["Pamphilosz","„mindenki kedvence”","férfi",11,"Athén","csal","polgár fia","iskolás",3,"apja műhelytulajdonos","Reggel a grammatisztésznél betűt vet, majd lantot tanul és a palaisztrában birkózik. Homéroszból hosszú részeket tud fejből.","Kiskorú; 18 évesen lehet polgár, ha mindkét szülője athéni.","Hogy a paidagógosza mindent elmond az apjának."],
+["Szürosz","„a szír”","férfi",61,"Athén","rab","házi rabszolga","paidagógosz (gyermekkísérő)",0,"némi megtakarítás (peculium), amiből szabadulását remélné","Harminc éve szolgálja a családot, most Pamphiloszt kíséri iskolába és vigyáz az erkölcseire.","Nincs; felszabadítása gazdája döntésén múlik.","Hogy öregen eladják vagy kiteszik."],
+["Damatriosz","„Démétérhez tartozó”","férfi",35,"Spárta","pol","spártiáta (homoiosz, „egyenlő”)","hoplita, katona",3,"állami földtelek (klérosz) helótákkal; pénzt nem használ, csak vaspénzt","Hétéves korától katonai nevelésben élt; ma is közös étkezésre (szüszszitia) jár. Kereskedni és kézművességet űzni tilos neki.","Részt vesz a népgyűlésen (apella), 60 éves kor után a gerusziába választható.","Ha nem tudja befizetni a havi gabona-hozzájárulást a közös étkezéshez, elveszti polgárjogát."],
+["Deinikha","„rettentő győzelem”","nő",39,"Spárta","csal","spártiáta nő","birtokkezelő, anya",4,"örökölt földek; a spártai nők birtokolhatnak földet","Míg férje táborban van, ő irányítja a helótákat és a gazdaságot. Lányát versenyfutásra edzi.","Politikai joga nincs, de gazdasági önállósága nagyobb, mint az athéni nőké.","Hogy fia nem állja ki az agógét, vagy pajzs nélkül tér haza."],
+["Antiokhosz","„a kitartó”","férfi",13,"Spárta","csal","spártiáta fiú","agógé-növendék",3,"családi klérosz várományosa","Mezítláb jár, egy köpenyt kap egy évre, nádágyon alszik. A túléléshez lopnia kell; ha rajtakapják, megverik.","Még nem polgár; 30 évesen lesz teljes jogú.","Az éhség és az idősebb fiúk fegyelmezése."],
+["Kallón","„szépség”","férfi",33,"Messzénia","hel","helóta (állami tulajdonú földművelő)","földműves egy spártai kléroszon",1,"kunyhó, néhány eszköz; a termés jelentős részét be kell szolgáltatnia","Nagyapja részt vett a Kr. e. 464-es messzéniai felkelésben. Titokban a régi szabadságról mesélnek egymásnak.","Nem adható el külföldre, de bármikor megölhetik: az ephoroszok évente hadat üzennek a helótáknak.","A krüpteia: fiatal spártaiak éjjel a túl erős vagy gyanús helótákra vadásznak."],
+["Melitta","„méhecske”","nő",25,"Lakónia","hel","helóta","földműves és szövő",0,"semmi, ami az övé lenne","Gazdasszonya házában is szolgál. Gyermekei is helóták lesznek.","Nincs; családja együtt maradhat, amíg a spártaiak úgy akarják.","Hogy a férjét elviszik a hadsereggel teherhordónak."],
+["Timokratész","„a tisztelet ereje”","férfi",50,"Gütheion (Lakónia)","szab","perioikosz (körüllakó)","bronzműves, fegyverkovács és kereskedő",3,"saját műhely és ház, pénzt használhat","Ő kovácsolja a spártai sereg lándzsahegyeit. A spártaiak helyett ő kereskedik.","Szabad, saját közössége ügyeit intézi, hoplitaként szolgál; spártai politikai joga nincs.","Hogy a háborúban a tengerparti települését az athéni flotta feldúlja."],
+["Ariszteasz","„a legjobb”","férfi",45,"Korinthosz","pol","polgár (oligarchikus vezetőréteg)","hajótulajdonos kereskedő (naukléros)",4,"3 kereskedőhajó, raktár a Lekhaion kikötőben","Korinthosz két tenger közti helyzetéből gazdagodott meg. Ő sürgeti a legjobban Spártát a háborúra.","Szavaz, a tanácsba választható; az oligarchia a vagyonosoknak kedvez.","Az athéni flotta elzárja a nyugati kereskedelmi utakat."],
+["Lüsziasz","„a megszabadító”","férfi",29,"Korinthosz","pol","szegény polgár","hajóvontató a diolkoszon",1,"napszám, egy bérelt szoba","Csapatával hajókat húz át a földszoroson, kőpályán. Kevés beleszólása van a politikába.","Polgár, de a vagyoni cenzus miatt a fontos tisztségekből kizárt.","Ha a kereskedelem leáll, munka nélkül marad."],
+["Leontiszkosz","„oroszlánkölyök”","férfi",57,"Thébai","pol","polgár (boiótiai vezetőréteg)","lótenyésztő földbirtokos, boiótarkhész",4,"nagy birtok, lovasszolgálatra elegendő vagyon","A Boiótiai Szövetség egyik vezetője. Gyűlöli Athént, és Plataia elfoglalását tervezi.","A thébai oligarchiában csak a vagyonosok politizálnak; ő közéjük tartozik.","Hogy Plataia athéni szövetségben marad, és a háta mögött ellenség áll."],
+["Iszmenodóra","„Iszménosz ajándéka”","nő",72,"Thébai","csal","polgárnő, özvegy","unokák nevelője, szövőmester",2,"fia gazdaságában él","Egyik fia Kr. e. 447-ben a koróneiai csatában esett el, amikor Boiótia lerázta az athéni uralmat. Régi dalokat tanít az unokáinak.","Politikai joga nincs; a családban nagy a tekintélye.","Hogy unokái is elesnek az új háborúban."],
+["Mnészitheosz","„istenre emlékező”","férfi",46,"Kósz","pol","polgár (szövetséges sziget)","orvos, az Aszklépiadész-iskola tagja",3,"kis birtok, honoráriumok; városoktól közorvosi fizetés","Vándororvosként jár városról városra; betegeinél a lázgörbét és a vizeletet figyeli, nem az isteni jeleket.","Kószon polgár; máshol idegen, de orvosként megbecsült.","Mit kezdjen egy ismeretlen, gyorsan terjedő lázzal?"],
+["Hégésziboulé","„a tanácsban vezető”","nő",30,"Milétosz","csal","polgárnő","háztartási gyapjúszövő műhely irányítója",3,"férje vagyona; a milétoszi gyapjú híres","Hat rabszolganő munkáját szervezi; a finom milétoszi köpenyeket a férje adja el.","Politikai joga nincs; a műhelyt csak a férje nevében vezetheti.","Az Athénnak fizetett szövetségi adó (phorosz) emelkedése."],
+["Mikón","„a kicsi”","férfi",43,"Szürakuszai","pol","polgár (demokrácia Kr. e. 466 óta)","tonhalhalász és halárus",2,"egy csónak, hálók, standja a piacon","Nagyhangú népgyűlési szónok. Gyanakszik az athéniakra, akik szerinte Szicíliára fenik a fogukat.","Szavaz a szürakuszai népgyűlésen.","Ha háború lesz, a flottába sorozzák."],
+["Morgész","szikel őslakos név","férfi",24,"Szürakuszai vidéke","szab","szikel (nem görög őslakos)","napszámos és pásztor",1,"néhány kecske","Népe a görögök érkezése előtt birtokolta a földet. A görögök között félig idegen.","Szabad, de a görög poliszban semmilyen politikai joga nincs.","Hogy egyre kevesebb a legelő, mert a görög birtokok terjeszkednek."],
+["Arisztandrosz","„a legjobb férfi”","férfi",36,"Argosz","pol","polgár (demokrácia)","bronzszobrász",3,"műhely, megrendelések szentélyektől","Polükleitosz körének tanítványa: arányokat számol, és atlétaszobrokat önt. Argosz semleges, ő ebből hasznot húz.","Szavaz az argoszi demokráciában.","Argosz semlegessége meddig tart?"],
+["Theogenész","„istentől született”","férfi",58,"Aigina (menekült)","pol","aiginai polgár, elüldözött","volt kereskedő",2,"elvesztette házát és hajóit; Thüreában kapott földet","Kr. e. 431-ben az athéniak kiűzték Aigina lakóit a szigetről; a spártaiak Thüreában telepítették le őket.","Elvileg polgár, de polisza nem létezik többé a szigeten.","Hogy visszatérhet-e valaha."],
+["Diokleidász","„Zeusz dicsőségének sarja”","férfi",40,"Megara","pol","polgár","gyapjúköpeny-készítő",1,"tönkrement műhely","A megarai határozat kizárta a megaraiakat az athéni piacokról és kikötőkből; a vevői elmaradtak.","Polgár Megarában, Athén piacain viszont nem árulhat.","Éhezik a családja; Spártától vár segítséget."],
+["Mnasziszté","„emlékező”","nő",50,"Delphoi","csal","delphoi polgárnő","Püthia, Apollón jósnője",2,"a szentély ellátja; egyszerű földműves családból jött","Évente kilenc hónapig, a hónapok hetedik napján jósol. Spárta azt kérdezte tőle: háborúzzon-e Athénnal.","Politikai joga nincs, szava mégis az egész görög világban súlyos.","Hogy a papok hogyan fogalmazzák meg a szavait."],
+["Ksenodikosz","„aki az idegeneknek igazságot tesz”","férfi",48,"Élisz","pol","éliszi polgár","hellanodikész (olümpiai versenybíró)",4,"birtokos család, bíbor bírói ruha","Tíz hónapig készíti fel a versenyzőket; büntetést szab ki, és ő koronázza a győzteseket.","Polgár Éliszben; tekintélye minden görögre kiterjed az olümpiai béke idején.","Hogy a háborúzó poliszok megsértik az ünnepi fegyverszünetet."],
+["Kleandrosz","„a híres férfi”","férfi",33,"Masszalia","pol","polgár (oligarchia, 600 tagú tanács)","bor- és ónkereskedő",4,"raktárak, hajó, kapcsolatok a Rhodanosz menti kelta törzsekkel","Görög bort ad a keltáknak brit szigeti ónért. Felesége kelta főnök lánya.","Masszaliában szavaz; a tanácsba csak öröklött vagyonnal kerülhet.","A távoli háború kevéssé érinti, de a kalózok igen."]
+];
+const N=D.length;
+const slotId=i=>"k"+String(i+1).padStart(2,"0");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const app=document.getElementById("app");
+
+// Rögzített keverés a sorszámos kiosztáshoz (minden eszközön ugyanaz)
+function seeded(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const PERM=(()=>{const a=[...Array(N).keys()],r=seeded(431);for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a})();
+
+function cardHTML(i,extra){
+  const [nev,jel,nem,kor,pol,st,stR,fogl,vs,vagy,leir,jog,gond]=D[i];
+  const ob='<span class="obols" aria-label="vagyonszint '+vs+' az 5-ből">'+[1,2,3,4,5].map(k=>'<i class="'+(k<=vs?'f':'')+'"></i>').join("")+'</span>';
+  return '<article class="card" style="--c:var('+STATUS[st].c+')"><div class="band"></div>'+
+   '<div class="top"><span class="st">'+STATUS[st].label+'</span><span>'+pol+'</span></div>'+
+   '<div class="name"><h2>'+nev+'</h2><div class="mean">'+jel+'</div></div>'+
+   '<dl class="facts"><dt>Kor, nem</dt><dd>'+kor+' éves '+nem+'</dd>'+
+   '<dt>Jogállás</dt><dd>'+stR+'</dd><dt>Foglalkozás</dt><dd>'+fogl+'</dd>'+
+   '<dt>Vagyon</dt><dd>'+ob+vagy+'</dd></dl>'+
+   '<div class="body"><p>'+leir+'</p><p><b>Jogai</b>'+jog+'</p><p><b>Gondja</b>'+gond+'</p></div>'+
+   '<div class="foot"><span>Kártya '+String(i+1).padStart(2,"0")+' / '+N+'</span>'+(extra||"")+'</div></article>';
+}
+function soloShell(inner){
+  app.innerHTML='<div class="solo"><header><div class="eyebrow">Szerepkártya · Kr. e. 431 tavasza</div><h1>Hellász 35 arca</h1></header>'+inner+'</div>';
+}
+function showMine(i,how){
+  soloShell('<p class="status">'+how+'</p>'+cardHTML(i));
+}
+
+// ---------- Sorszámos mód (mindenkinek működik, bejelentkezés nélkül is) ----------
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function fallback(reason){
+  const saved=parseInt(lsGet("hellasz-sorszam")||"",10);
+  soloShell((reason?'<div class="note">'+reason+'</div>':'')+
+    '<p class="status">Írd be a naplóbeli sorszámodat: minden sorszámhoz más karakter tartozik.</p>'+
+    '<form class="ask" id="f"><label for="n">Sorszám<input id="n" type="number" min="1" max="'+N+'" inputmode="numeric" value="'+(saved>=1&&saved<=N?saved:"")+'"></label>'+
+    '<button class="btn" type="submit">Kártyám</button><span class="err" id="e" hidden></span></form><div id="out"></div>');
+  const f=document.getElementById("f"),e=document.getElementById("e"),out=document.getElementById("out");
+  function go(n){out.innerHTML=cardHTML(PERM[n-1]);}
+  if(saved>=1&&saved<=N)go(saved);
+  f.addEventListener("submit",ev=>{ev.preventDefault();
+    const n=parseInt(document.getElementById("n").value,10);
+    if(!(n>=1&&n<=N)){e.hidden=false;e.textContent="1 és "+N+" közötti számot adj meg.";return}
+    e.hidden=true;lsSet("hellasz-sorszam",String(n));go(n);
+  });
+}
+
+// ---------- Tanárnézet ----------
+function teacher(db,user){
+  let slots={},confirming=false,names={};
+  app.innerHTML='<header><div class="eyebrow">Tanárnézet · csak te látod</div><h1>Hellász 35 arca</h1>'+
+   '<p>A link megnyitásakor minden diák automatikusan egy még szabad karaktert kap. Itt követheted, ki melyiket kapta. Akinek nincs írási joga, sorszám alapján kap kártyát; a táblázat megmutatja, melyik sorszámhoz melyik karakter tartozik.</p></header>'+
+   '<div class="teacherbar"><div class="stat" id="cnt">–<small>kiosztva</small></div><div class="spacer"></div><div id="act"></div></div>'+
+   '<details class="map"><summary>Sorszám → karakter táblázat (bejelentkezés nélküli diákoknak)</summary><div class="maptab"><div class="cols">'+
+   PERM.map((c,k)=>'<div>'+String(k+1).padStart(2," ")+'. &nbsp;'+D[c][0]+'</div>').join("")+'</div></div></details>'+
+   '<div class="grid" id="grid"></div>';
+  const grid=document.getElementById("grid"),act=document.getElementById("act"),cnt=document.getElementById("cnt");
+  async function render(){
+    const owners=Object.values(slots).map(s=>s.owner).filter(Boolean);
+    if(user&&owners.length){try{names=await user.profiles([...new Set(owners)])||{}}catch(e){}}
+    let taken=0;
+    grid.innerHTML=D.map((_,i)=>{const s=slots[slotId(i)];
+      if(s&&s.owner){taken++;const nm=(names[s.owner]&&names[s.owner].name)||"egy diák";return cardHTML(i,'<span class="tag taken">Kiosztva: '+esc(nm)+'</span>')}
+      return cardHTML(i,'<span class="tag">Szabad</span>')}).join("");
+    cnt.innerHTML=taken+' / '+N+'<small>kiosztva</small>';
+    drawAct(taken);
+  }
+  function drawAct(taken){
+    if(!db){act.innerHTML='<span class="status">A közös nyilvántartás most nem érhető el.</span>';return}
+    if(confirming){act.innerHTML='<div class="confirm">Minden kiosztás törlődik. Biztos? <button class="btn danger" id="yes" type="button">Igen, nullázom</button><button class="btn ghost" id="no" type="button">Mégse</button></div>';
+      document.getElementById("yes").onclick=reset;document.getElementById("no").onclick=()=>{confirming=false;drawAct(taken)};return}
+    act.innerHTML='<button class="btn ghost" id="rst" type="button"'+(taken?'':' disabled')+'>Kiosztás nullázása új osztályhoz</button>';
+    document.getElementById("rst").onclick=()=>{confirming=true;drawAct(taken)};
+  }
+  async function reset(){
+    act.innerHTML='<span class="status">Nullázás…</span>';
+    for(const id of Object.keys(slots)){try{await db.doc("slots/"+id).delete()}catch(e){}}
+    confirming=false;
+  }
+  render();
+  if(db){
+    db.collection("slots").onSnapshot(snap=>{slots={};snap.docs.forEach(d=>{if(d.exists)slots[d.id]=d.data()});render()},
+      ()=>{act.innerHTML='<span class="status">A kiosztási adatok nem érhetők el.</span>'});
+  }
+}
+
+// ---------- Diák: automatikus kiosztás ----------
+async function student(db,user){
+  const id=await user.id();
+  if(!id){fallback();return}
+  if(await user.can("data.write")===false){
+    fallback('<strong>Automatikus kiosztás most nem lehetséges</strong>, mert ehhez a linkhez csak olvasási jogod van. Használd a sorszámodat.');return}
+  let done=false,claiming=false;
+  const timer=setTimeout(()=>{if(!done){done=true;fallback('A közös nyilvántartás nem válaszol. Használd a sorszámodat.')}},10000);
+  const unsub=db.collection("slots").onSnapshot(async snap=>{
+    if(done||snap.metadata.fromCache)return;
+    const mine=snap.docs.find(d=>d.exists&&d.data().owner===id);
+    if(mine){done=true;clearTimeout(timer);unsub&&unsub();showMine(parseInt(mine.id.slice(1),10)-1,"Ez a te szereped. Ezt a kártyát kapod akkor is, ha újra megnyitod a linket.");return}
+    if(claiming)return;claiming=true;clearTimeout(timer);
+    const taken=new Set(snap.docs.filter(d=>d.exists&&d.data().owner).map(d=>d.id));
+    const free=[...Array(N).keys()].map(slotId).filter(s=>!taken.has(s));
+    for(let i=free.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[free[i],free[j]]=[free[j],free[i]]}
+    for(const sid of free){
+      try{
+        const ref=db.doc("slots/"+sid);
+        const r=await ref.acquire({holder:id,ttlMs:4000});
+        if(!r.acquired)continue;
+        const s=await ref.get();
+        if(s.exists&&s.data().owner)continue;
+        await ref.set({owner:id,at:Date.now()});
+        done=true;unsub&&unsub();
+        showMine(parseInt(sid.slice(1),10)-1,"Ez a te szereped. Ezt a kártyát kapod akkor is, ha újra megnyitod a linket.");
+        return;
+      }catch(e){
+        if(e&&e.code==="invalid_argument"){done=true;unsub&&unsub();fallback('<strong>Automatikus kiosztás most nem lehetséges</strong>, mert ehhez a linkhez csak olvasási jogod van. Használd a sorszámodat.');return}
+      }
+    }
+    done=true;unsub&&unsub();
+    fallback('<strong>Mind a '+N+' karaktert kiosztották már.</strong> Kérj sorszámot a tanárodtól.');
+  },()=>{if(!done){done=true;clearTimeout(timer);fallback('A közös nyilvántartás nem érhető el. Használd a sorszámodat.')}});
+}
+
+(async()=>{
+  const use=window.claude&&window.claude.use;
+  if(!use){fallback();return}
+  const [user,db]=await Promise.all([window.claude.use("user"),window.claude.use("db")]);
+  let owner=false;try{owner=user?await user.isOwner():false}catch(e){}
+  if(owner){teacher(db,user);return}
+  if(!db||!user){fallback();return}
+  student(db,user);
+})();
+</script>
+
+</body></html>
